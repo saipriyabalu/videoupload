@@ -1,6 +1,6 @@
 # Video upload Streamlit app
 
-This folder holds the main Streamlit UI (`frontend.py`). Analysis is implemented in the parent package [`videouploadanalysis.py`](../videouploadanalysis.py), which `frontend.py` imports (only the analysis helpers run on import; the standalone UI in that file runs when you execute it directly).
+This folder holds the main Streamlit UI (`frontend.py`) and [`videouploadanalysis.py`](videouploadanalysis.py). `frontend.py` imports the latter from the same directory (only analysis helpers run on import; the standalone UI in that module runs when you execute it directly with `streamlit run videouploadanalysis.py`).
 
 For project-wide setup, prerequisites, and layout, see the [repository README](../README.md).
 
@@ -22,7 +22,7 @@ Open the URL Streamlit prints (usually `http://localhost:8501`).
 
    `allow any-user to use generative-ai-family in compartment <compartment-name> where ALL {request.principal.type='generativeaiapikey'}`
 
-The Streamlit analysis path uses `ChatOCIGenAI` in `videouploadanalysis.py` (standard OCI SDK auth).
+The Streamlit analysis path uses `ChatOCIGenAI` in this folder’s `videouploadanalysis.py` (standard OCI SDK auth).
 
 If you use the separate OpenAI-compatible example in `video.py`, that script reads `OCI_GENAI_API_KEY`:
 
